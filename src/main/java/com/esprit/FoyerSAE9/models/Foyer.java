@@ -17,7 +17,10 @@ public class Foyer {
     private Long idFoyer;
     private String nomFoyer;
     private Long capaciteFoyer;
-
+    @OneToOne
+    private Universite universite;
+    @OneToMany(mappedBy = "foyer")
+    private List<Bloc> blocs;
 
 
 }

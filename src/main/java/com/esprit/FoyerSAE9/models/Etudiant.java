@@ -22,5 +22,7 @@ public class Etudiant {
     private Long cin;
     private String ecole;
     private Date dateNaissance;
-
+    @ManyToMany(mappedBy = "etudiants")
+    @JsonIgnore
+    private List<Reservation> reservations;
 }

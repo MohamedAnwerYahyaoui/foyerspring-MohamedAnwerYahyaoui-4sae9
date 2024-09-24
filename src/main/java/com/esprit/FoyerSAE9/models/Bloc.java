@@ -17,5 +17,8 @@ public class Bloc {
     private Long idBloc;
     private String nomBloc;
     private Long capaciteBloc;
-
+    @ManyToOne
+    private Foyer foyer;
+    @OneToMany(mappedBy = "bloc")
+    private List<Chambre> chambres;
 }

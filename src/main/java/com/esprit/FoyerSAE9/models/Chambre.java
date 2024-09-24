@@ -18,5 +18,8 @@ public class Chambre {
     private Long numeroChambre;
     @Enumerated(EnumType.STRING)
     private TypeChambre typeC;
-
+    @ManyToOne
+    private Bloc bloc;
+    @OneToMany
+    private List<Reservation>reservations;
 }

@@ -18,6 +18,7 @@ public class Reservation {
     private String idReservation;
     private Date anneeUniversitaire;
     private boolean estValide;
-
+    @ManyToMany
+    private List<Etudiant> etudiants;
 
 }
