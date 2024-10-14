@@ -9,5 +9,6 @@ public interface IBlocService {
     Bloc addBloc(Bloc bloc);
     void deletBloc(Long idBloc);
     List<Bloc> getAllBloc();
+    Bloc getBlockById(Long id);
     Bloc updateBloc(Bloc bloc);
 }

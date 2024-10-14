@@ -30,6 +30,11 @@ public class ChambreController {
     public List<Chambre> chambreList(){
         return iChambreService.getAllChambre();
     }
+
+    @GetMapping(path = "/chambreById/{id}")
+    public Chambre getChambreById(@PathVariable Long id){
+        return iChambreService.getChambreById(id);
+    }
     @DeleteMapping(path = "deleteBy/{id}")
     public void deleteChambre(@PathVariable Long id){
         iChambreService.deletChambre(id);

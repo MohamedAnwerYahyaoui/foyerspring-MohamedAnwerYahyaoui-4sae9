@@ -2,6 +2,7 @@ package com.esprit.FoyerSAE9.Services.ServiceImpl;
 
 import com.esprit.FoyerSAE9.Repository.UniversiteRepository;
 import com.esprit.FoyerSAE9.Services.IUniversiteService;
+import com.esprit.FoyerSAE9.models.Bloc;
 import com.esprit.FoyerSAE9.models.Universite;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +31,11 @@ public class IUniversiteServiceImpl implements IUniversiteService {
     @Override
     public List<Universite> getAllUniversite() {
         return universiteRepository.findAll();
+    }
+
+    @Override
+    public Universite getUniversiteById(Long id) {
+        return universiteRepository.findById(id).orElse(null);
     }
 
     @Override

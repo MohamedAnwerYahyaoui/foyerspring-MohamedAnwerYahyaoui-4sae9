@@ -1,5 +1,6 @@
 package com.esprit.FoyerSAE9.Services;
 
+import com.esprit.FoyerSAE9.models.Bloc;
 import com.esprit.FoyerSAE9.models.Chambre;
 import com.esprit.FoyerSAE9.models.Universite;
 
@@ -9,5 +10,6 @@ public interface IUniversiteService {
     Universite addUniversite(Universite universite);
     void deletUniversite(Long idUniversite);
     List<Universite> getAllUniversite();
+    Universite getUniversiteById(Long id);
     Universite updateUniversite(Universite universite);
 }

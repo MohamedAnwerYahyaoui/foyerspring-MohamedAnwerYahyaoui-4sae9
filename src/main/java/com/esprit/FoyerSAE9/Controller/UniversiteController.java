@@ -17,18 +17,23 @@ public class UniversiteController {
         this.iUniversiteService = iUniversiteService;
     }
 
-    @PostMapping(path = "/addReservation")
+    @PostMapping(path = "/addUniversitie")
     public Universite addEtudiant(@RequestBody Universite universite){
         return iUniversiteService.addUniversite(universite);
     }
 
-    @PostMapping(path = "/editReservation")
-    public Universite editEtudiant(@RequestBody Universite universite){
+    @PostMapping(path = "/editUniversitie")
+    public Universite editUniversitie(@RequestBody Universite universite){
         return iUniversiteService.updateUniversite(universite);
     }
-    @GetMapping(path = "/listReservation")
+    @GetMapping(path = "/listUniversitie")
     public List<Universite> UniversiteList(){
         return iUniversiteService.getAllUniversite();
+    }
+
+    @GetMapping(path = "/getUniversitie/{id}")
+    public Universite getUniversitieById(@PathVariable Long id){
+        return iUniversiteService.getUniversiteById(id);
     }
     @DeleteMapping(path = "deleteBy/{id}")
     public void deleteUniversite(@PathVariable Long id){

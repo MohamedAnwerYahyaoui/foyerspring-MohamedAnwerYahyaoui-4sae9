@@ -30,6 +30,11 @@ public class EtudiantController {
     public List<Etudiant> etudiantList(){
         return iEtudiantService.getAllEtudiant();
     }
+
+    @GetMapping(path = "/etudiant/{id}")
+    public Etudiant getEtudiantById(@PathVariable Long id){
+        return iEtudiantService.getEtudiantById(id);
+    }
     @DeleteMapping(path = "deleteBy/{id}")
     public void deleteEtudiant(@PathVariable Long id){
         iEtudiantService.deleteEtudiant(id

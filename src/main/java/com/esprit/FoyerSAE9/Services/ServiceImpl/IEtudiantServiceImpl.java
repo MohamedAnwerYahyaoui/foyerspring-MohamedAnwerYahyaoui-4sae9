@@ -2,6 +2,7 @@ package com.esprit.FoyerSAE9.Services.ServiceImpl;
 
 import com.esprit.FoyerSAE9.Repository.EtudiantRepository;
 import com.esprit.FoyerSAE9.Services.IEtudiantService;
+import com.esprit.FoyerSAE9.models.Bloc;
 import com.esprit.FoyerSAE9.models.Etudiant;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +30,11 @@ public class IEtudiantServiceImpl implements IEtudiantService {
     @Override
     public List<Etudiant> getAllEtudiant() {
         return etudiantRepository.findAll();
+    }
+
+    @Override
+    public Etudiant getEtudiantById(Long id) {
+        return etudiantRepository.findById(id).orElse(null);
     }
 
     @Override

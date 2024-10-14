@@ -27,7 +27,11 @@ public class BlocController {
     public List<Bloc> blocList(){
         return iBlocService.getAllBloc();
     }
-    @DeleteMapping(path = "deleteBy/{id}")
+    @GetMapping(path = "/blocById/{id}")
+    public Bloc getBlockById(@PathVariable Long id){
+        return iBlocService.getBlockById(id);
+    }
+    @DeleteMapping(path = "/deleteBy/{id}")
     public void deleteBloc(@PathVariable Long id){
         iBlocService.deletBloc(id);
     }

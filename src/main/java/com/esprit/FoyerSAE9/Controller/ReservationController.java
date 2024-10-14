@@ -18,17 +18,22 @@ public class ReservationController {
     }
 
     @PostMapping(path = "/addReservation")
-    public Reservation addEtudiant(@RequestBody Reservation reservation){
+    public Reservation addReservation(@RequestBody Reservation reservation){
         return iReservationService.addReservation(reservation);
     }
 
     @PostMapping(path = "/editReservation")
-    public Reservation editEtudiant(@RequestBody Reservation reservation){
+    public Reservation editReservation(@RequestBody Reservation reservation){
         return iReservationService.updateReservation(reservation);
     }
     @GetMapping(path = "/listReservation")
     public List<Reservation> reservationList(){
         return iReservationService.getAllReservation();
+    }
+
+    @GetMapping(path = "/getReservation/{id}")
+    public Reservation getReservationById(@PathVariable Long id){
+        return iReservationService.getReservationById(id);
     }
     @DeleteMapping(path = "deleteBy/{id}")
     public void deleteReservation(@PathVariable Long id){

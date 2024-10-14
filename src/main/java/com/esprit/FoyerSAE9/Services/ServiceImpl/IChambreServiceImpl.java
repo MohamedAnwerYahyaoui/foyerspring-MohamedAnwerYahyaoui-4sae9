@@ -2,6 +2,7 @@ package com.esprit.FoyerSAE9.Services.ServiceImpl;
 
 import com.esprit.FoyerSAE9.Repository.ChambreRepository;
 import com.esprit.FoyerSAE9.Services.IChambreService;
+import com.esprit.FoyerSAE9.models.Bloc;
 import com.esprit.FoyerSAE9.models.Chambre;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +31,11 @@ public class IChambreServiceImpl implements IChambreService {
     @Override
     public List<Chambre> getAllChambre() {
         return chambreRepository.findAll();
+    }
+
+    @Override
+    public Chambre getChambreById(Long id) {
+        return chambreRepository.findById(id).orElse(null);
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.esprit.FoyerSAE9.Services.ServiceImpl;
 
 import com.esprit.FoyerSAE9.Repository.FoyerRepository;
 import com.esprit.FoyerSAE9.Services.IFoyerService;
+import com.esprit.FoyerSAE9.models.Bloc;
 import com.esprit.FoyerSAE9.models.Foyer;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +30,11 @@ public class IFoyerServiceImpl implements IFoyerService {
     @Override
     public List<Foyer> getAllFoyer() {
         return foyerRepository.findAll();
+    }
+
+    @Override
+    public Foyer getFoyerById(Long id) {
+        return foyerRepository.findById(id).orElse(null);
     }
 
     @Override
